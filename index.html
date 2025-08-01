@@ -7,15 +7,21 @@
 	<title> Osteria Senti｜千鳥町のイタリアン</title>
 	<link href="css/reset.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+	  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 	   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="images/favicon.ico" sizes="32x32">
 </head>
 
 <body>
 	<header>
 		<div class="header-content-wrapper">
+			<div class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 		<div class="logos-wrapper">
 		<a href="index.html"><img src="images/logo.png" alt="Osteria Senti ロゴ"></a>
 	</div><!--logos-wrapper div--> 
@@ -23,18 +29,17 @@
 　　　　<div class="sns">　
 		<a href="https://www.instagram.com/osteriasenti/" target="_blank" rel="noopener noreferrer"><img src="images/logo1.png" alt="Instagramアイコン"></a>
       </div><!--sns div-->
-	  
     </div> 
 		<nav>
 		   <ul>
 				<li><a href="index.html">HOME</a></li>
 				<li><a href="aboutus.html">ABOUT US</a></li>
 				<li><a href="menu.html">MENU</a></li>
-				<li><a href="#access">ACCESS</a></li>
+				<li><a href="index.html#access">ACCESS</a></li>
 				<li><a href="contact.html">CONTACT</a></li>
 			</ul>
 		</nav>
-		<img src="images/itarian flag.jpg" alt="flag">
+		<img src="images/itarian flag.jpg" alt="イタリア国旗">
 </header>
 
 	<main>
@@ -67,6 +72,7 @@
 		});
 	});
 </script>
+	
 <!-- reservation start -->
 <div class="reservation">
 	<div class="tel">
@@ -139,7 +145,7 @@
     <h3>アクセス情報</h3>
 
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.604473305481!2d139.6806733762886!3d35.58667623910385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60186105e1a1b1a1%3A0xf6039b7d8b7b9b1!2s1-chome%2C%20Chidori%2C%20Ota%20City%2C%20Tokyo%20146-0083!5e0!3m2!1sen!2sjp!4v1700000000000!5m2!1sen!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.2134037096525!2d139.69030219551613!3d35.57348675700621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018600805ca9105%3A0xd2f049e844e24154!2sOsteria%20Senti!5e0!3m2!1sen!2sjp!4v1754013860432!5m2!1sen!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="access-info-cards">
@@ -259,4 +265,13 @@
 	</footer>
 
 </body>
+<script>
+    $(document).ready(function() {
+        // ハンバーガーメニューのトグル
+        $('.hamburger').click(function() {
+            $(this).toggleClass('active');
+            $('nav').toggleClass('active');
+        });
+    });
+</script>
 </html>

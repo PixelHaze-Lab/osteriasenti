@@ -19,9 +19,14 @@
 		<a href="index.html"><img src="images/logo.png" alt="Osteria Senti ロゴ"></a>
 	</div><!--logos-wrapper div--> 
 
-　　　　<div class="sns">　
-		<a href="https://www.instagram.com/"><img src="images/logo1.png" alt="Instagramアイコン"></a>
+　　　<div class="sns">　
+		<a href="https://www.instagram.com/osteriasenti/" target="_blank" rel="noopener noreferrer"><img src="images/logo1.png" alt="Instagramアイコン"></a>
       </div><!--sns div-->
+      <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
     </div> 
 		<nav>
 		   <ul>
@@ -128,5 +133,14 @@
 		<p>▶ ご予約：電話 or <a href="https://tabelog.com/tokyo/A1317/A131714/13103616/dtlphotolst/smp2/" target="_blank" rel="noopener noreferrer">食べログ</a> ▶ Instagram：<a href="https://www.instagram.com/osteriasenti/" target="_blank" rel="noopener noreferrer">@osteriasenti</a></p>
 		<p><small>&copy; 2025 Osteria Senti. All Rights Reserved.</small></p>
 	</footer>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.hamburger').click(function(){
+        $(this).toggleClass('active');
+        $('nav').toggleClass('active');
+    });
+});
+</script>
 </body>
 </html>

@@ -6,21 +6,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Osteria Senti｜千鳥町のイタリアン</title>
 	<link href="css/reset.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/styles3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 	  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 	   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="images/favicon.ico" sizes="32x32">
 </head>
 
 <body>
 	<header>
 		<div class="header-content-wrapper">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 		<div class="logos-wrapper">
 		<a href="index.html"><img src="images/logo.png" alt="Osteria Senti ロゴ"></a>
 	</div><!--logos-wrapper div--> 
 
 　　　　<div class="sns">　
-		<a href="https://www.instagram.com/"><img src="images/logo1.png" alt="Instagramアイコン"></a>
+		<a href="https://www.instagram.com/osteriasenti/" target="_blank" rel="noopener noreferrer"><img src="images/logo1.png" alt="Instagramアイコン"></a>
       </div><!--sns div-->
     </div> 
 		<nav>
@@ -112,5 +119,14 @@
 		<p>▶ ご予約：電話 or <a href="https://tabelog.com/tokyo/A1317/A131714/13103616/dtlphotolst/smp2/" target="_blank" rel="noopener noreferrer">食べログ</a> ▶ Instagram：<a href="https://www.instagram.com/osteriasenti/" target="_blank" rel="noopener noreferrer">@osteriasenti</a></p>
 		<p><small>&copy; 2025 Osteria Senti. All Rights Reserved.</small></p>
 	</footer>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.hamburger').click(function(){
+            $(this).toggleClass('active');
+            $('nav').toggleClass('active');
+        });
+    });
+</script>
 </body>
  
