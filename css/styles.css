@@ -150,7 +150,7 @@ header .logos-wrapper img {
     max-width: 130px; 
     display: block;
     margin: 0 auto; 
-    transform: translateX(30px);
+    transform: none;
 }
 .sns {
     display: flex;
@@ -797,7 +797,7 @@ section.item p {
 .contact-header {
     max-width: 1200px; 
     margin: var(--spacing-l) auto; 
-    padding: 0 var(--spacing-s); /
+    padding: 0 var(--spacing-s);
     text-align: center; 
 }
 .contact-header img{
@@ -828,7 +828,7 @@ section.item p {
     border-radius: 8px;
     box-shadow: 0 3px 10px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-grow: 1; /
+    flex-grow: 1;
     max-width: 45%; /* 2列表示時の最大幅 */
     min-width: 280px; /* 小さすぎないように */
     text-align: center;
@@ -1068,8 +1068,7 @@ p.menu-details {
 	width:620px;
 	height:135px;
 	padding:5px;
-	background:peachpuff; /* または背景画像を使用する場合は下記をコメント解除 */
-	/* background:url("../images/background.gif"); */
+	background:peachpuff; 
 	position:relative;
 	border: 2px dotted #F90;
 }
@@ -1109,14 +1108,24 @@ p.menu-details {
 }
 
 /* 1024px以下のブレークポイント */
+
 @media (max-width: 1024px) {
     /* ヘッダー */
     .header-content-wrapper {
         padding: 1.5rem 1rem;
     }
+    header .logos-wrapper {
+        position: static;
+        left: auto;
+        transform: none;
+        text-align: center;
+    }
     header .logos-wrapper img {
         max-width: 100px;
-        transform: translateX(20px);
+        position: static;
+        display: block;
+        margin: 0 auto;
+        transform: none;
     }
     .sns img {
         width: 30px;
@@ -1163,7 +1172,6 @@ p.menu-details {
 
     /* シグネチャーセクション */
     /* ---------- SIGNATURE（OUR SIGNATURE） ---------- */
-    /* 画面幅 768〜1024px で３カラムが収まるようにレイアウトをグリッド化 */
     .item_box {
         display: grid; /* flex ではなく grid で制御 */
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1171,24 +1179,21 @@ p.menu-details {
     }
 
     .item_box section.item {
-        width: 100%;       /* grid 子要素は幅100% でOK */
-        min-width: 0;      /* 最小幅によるはみ出しを防止 */
+        width: 100%;       
+        min-width: 0;      
     }
-    /* 「メニューを見る」ボタンをグリッドの中央に配置 */
+    
     .item_box .button08 {
-        grid-column: 1 / -1; /* 全カラムを横断 */
-        justify-self: center; /* 中央寄せ */
+        grid-column: 1 / -1; 
+        justify-self: center; 
     }
-
-    /* iPad Pro (横1024) などで 3 カードが中央揃えになるよう固定 3 カラム */
     .item_box {
         grid-template-columns: repeat(3, 1fr);
-        justify-content: center; /* 余白を均等にして中央寄せ */
+        justify-content: center; 
     }
 
-    /* カード幅を均一に調整 */
     .item_box section.item {
-        max-width: 300px; /* 必要に応じて調整 */
+        max-width: 300px; 
         width: 100%;
     }
 
@@ -1265,34 +1270,130 @@ p.menu-details {
         margin-bottom: 15px;
     }
 }
+    /* IPAD MINIの調整 */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    nav ul {
+        flex-wrap: nowrap; 
+        justify-content: space-between; 
+        padding: 0.8rem 1rem;
+    }
+
+    nav li {
+        width: auto; 
+        padding: 0 0.5rem;
+    }
+
+    nav li a {
+        font-size: 1.2rem; 
+    }
+    .about-us {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+     .about-us h2 {
+        text-align: center; 
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto 1rem;
+    }
+
+    .Storyparagraph {
+        width: 90%; 
+        margin: 0 auto; 
+        text-align: center; 
+    }
+
+    .Storyparagraph p {
+        text-align: center; 
+        line-height: 1.8;
+    }
+}
+    .about-us .main-image {
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .about-us .main-image img {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+    
+     /* Messageセクションのレイアウト修正 */
+    .chief-info {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .chief-image {
+        width: 40%;
+        padding: 1rem;
+    }
+    
+    .paragraph {
+        padding-top: 2rem;
+        width: 80%;
+        text-align: center;
+    }
+}
+
 
 /* ＝＝＝＝＝＝スマホ用の540px以下のブレークポイント＝＝＝＝ */
 
 @media (max-width: 540px) {
-    
     .header-content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 0.5rem 1rem;
+    }
+
+    .hamburger {
+        position: absolute;
+        left: 0.5rem; 
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px; height: 40px;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
+        justify-content: center;
     }
+
+    .header-content-wrapper { padding-left: 0; }
+
+    .logos-wrapper {
+        position: static;
+        left: auto;
+        transform: none;
+        flex-grow: 1;
+        text-align: center;
+    }
+
     header .logos-wrapper img {
         max-width: 80px;
-        transform: none;
-        margin-bottom: 1rem;
     }
-    .sns img {
-        width: 25px;
-        height: 25px;
+
+    .sns {
+        position: relative;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
     }
-nav {
-        display: none; /* 初期状態では非表示 */
-        position: absolute; /* ヘッダーからの相対位置 */
-        top: 60px; /* ヘッダーの高さに合わせて調整 */
+
+    nav {
+        display: none; 
+        position: absolute; 
+        top: 60px;
         left: 0;
         width: 100%;
-        background-color: #fff; /* メニューの背景色 */
-        z-index: 99; /* ハンバーガーメニューより低いz-index */
-        /* ...その他のnavのスタイル... */
+        background-color: #fff; 
+        z-index: 99; 
     }
 
     nav.active {
@@ -1308,18 +1409,18 @@ nav {
         font-size: 1rem;
     }
     .hamburger {
-        display: flex; /* または block; */ /* これが「none」でないことを確認 */
-        flex-direction: column; /* バーを縦に並べて三本線にする */
-        order: 1; /* 左端に配置 */
-        margin-right: auto; /* 右側の余白を自動で取り、左に寄せる */
-        z-index: 10; /* 他の要素の上に表示されるように、必要であれば設定 */
-        /* 幅や高さがゼロになっていないかも確認してください */
-        width: 40px; /* 例: 明示的に幅を設定 */
-        height: 40px; /* 例: 明示的に高さ設定 */
-        align-items: center; /* アイコンを垂直方向中央に */
-        justify-content: center; /* アイコンを水平方向中央に */
-        cursor: pointer; /* クリック可能であることを示す */
+        display: flex; 
+        flex-direction: column; 
+        order: 1; 
+        margin-right: auto; 
+        z-index: 10; 
+        width: 40px; 
+        height: 40px; 
+        align-items: center; 
+        justify-content: center; 
+        cursor: pointer; 
     }
+
     /* ハンバーガーアイコンのバー */
     .hamburger span {
         width: 25px;
@@ -1335,7 +1436,7 @@ nav {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 15px; /* 必要に応じて調整 */
+        padding: 10px 15px; 
     }
     .logos-wrapper {
         order: 2; 
@@ -1400,13 +1501,13 @@ nav {
 
     /* シグネチャーセクション */
     .item_box {
-        display: flex !important; /* grid を上書き */
+        display: flex !important; 
         flex-direction: column;
-        align-items: center; /* 子要素を中央に */
+        align-items: center; 
     }
     section.item {
-        width: 90%;          /* 両側に余白を確保 */
-        max-width: 350px;    /* カードの広がりすぎを防止 */
+        width: 90%;         
+        max-width: 350px;    
         min-width: 0;
     }
     .signature h2 {
@@ -1525,33 +1626,32 @@ nav {
 
     .chief-info {
         flex-direction: column; 
-        gap: 20px; /* 画像とテキストの間隔 */
-        align-items: center; /* 中央寄せ */
-        text-align: center; /* 全体的に中央寄せ */
+        gap: 20px; 
+        align-items: center; 
+        text-align: center; 
     }
 
     .chief-image {
-        /* 画像コンテナのサイズを調整 */
-        width: 180px; /* 例: スマートフォンで表示しやすい固定幅 */
-        height: 180px; /* 例: スマートフォンで表示しやすい固定高さ */
-        border-radius: 50%; /* 丸い画像を維持 */
-        overflow: hidden; /* 丸く切り取る */
-        margin: 0 auto 10px auto; /* 画像を中央に配置し、下に少し余白 */
+        width: 180px; 
+        height: 180px; 
+        border-radius: 50%; 
+        overflow: hidden; 
+        margin: 0 auto 10px auto; 
     }
 
     .chief-image img {
-        width: 100%; /* コンテナの幅いっぱいに広げる */
-        height: 100%; /* コンテナの高さいっぱいに広げる */
-        object-fit: cover; /* 画像がコンテナに収まるようにトリミング（アスペクト比を維持） */
-        display: block; /* 余分な下余白を防ぐ */
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        display: block; 
     }
 
     .paragraph {
-        font-size: 0.9rem; /* フォントサイズを小さく */
-        text-align: left; /* 段落内のテキストは左寄せに戻す（必要に応じて） */
-        width: 100%; /* 段落の幅をコンテナの100%にする */
-        max-width: 450px; /* スマートフォンでも読みやすい最大幅を設定（行の長さを制限） */
-        margin: 0 auto; /* 中央寄せ */
+        font-size: 0.9rem; 
+        text-align: left; 
+        width: 100%; 
+        max-width: 450px; 
+        margin: 0 auto; 
     }
 
     .paragraph strong {
@@ -1559,5 +1659,22 @@ nav {
         margin-bottom: 10px;
         display: block; /* 強調部分をブロック要素にして改行 */
         text-align: center; /* 強調部分のみ中央寄せ（もし望むなら） */
+    }
+    /* ロゴを中央配置 */
+    .header-content-wrapper {
+        position: relative; 
+    }
+    .logos-wrapper {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-grow: 0; 
+    }
+    header .logos-wrapper img {
+        margin: 0 auto;
+        transform: none; 
+    }
+    .hamburger {
+        margin-right: 0; 
     }
 }

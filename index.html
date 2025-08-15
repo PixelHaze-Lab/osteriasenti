@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Osteria Senti｜千鳥町のイタリアン</title>
 	<link href="css/reset.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/styles2.css" rel="stylesheet">
 
 	  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 	   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lora:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -14,7 +14,8 @@
     <link rel="icon" href="images/favicon.ico" sizes="32x32">
 </head>
 
-<body>
+<body id="top">
+
 	<header>
 		<div class="header-content-wrapper">
 			<div class="hamburger">
@@ -26,10 +27,10 @@
 		<a href="index.html"><img src="images/logo.png" alt="Osteria Senti ロゴ"></a>
 	</div><!--logos-wrapper div--> 
 
-　　　　<div class="sns">　
+　　<div class="sns">
 		<a href="https://www.instagram.com/osteriasenti/" target="_blank" rel="noopener noreferrer"><img src="images/logo1.png" alt="Instagramアイコン"></a>
-      </div><!--sns div-->
-    </div> 
+    </div><!--sns div-->
+</div> 
 		<nav>
 		   <ul>
 				<li><a href="index.html">HOME</a></li>
@@ -53,25 +54,8 @@
 				</ul>
         </div><!--bx-wrapper div--> 
 		
-<!-- jQuery library -->
-<script src="js/jquery-3.1.1.min.js"></script>
-<!-- bxSlider Javascript file -->
-<script src="js/jquery.bxslider.js"></script>
-<script>
-	$(document).ready(function(){
-		$('.bxslider').bxSlider({
-			auto:true,
-			mode: 'fade',
-			moveSlides: true,
-			infiniteLoop: true,
-			minSlides: 3,
-			maxSlides: 3,
-			speed: 1000,
-			controls:true,
-			pager:true,
-		});
-	});
-</script>
+
+
 	
 <!-- reservation start -->
 <div class="reservation">
@@ -174,6 +158,14 @@
             <p class="small-text">※専用駐車場はございません。お近くのコインパーキングをご利用ください。</p>
         </div>
     </div><!--access div-->
+    
+    <!-- トップページに戻るボタン -->
+    <div class="back-to-top-container">
+        <a href="#top" class="back-to-top-btn">
+            <i class="fas fa-home"></i>
+            <span>トップページに戻る</span>
+        </a>
+    </div>
 </section>
 
 <!-- access end -->
@@ -264,14 +256,30 @@
 		<p><small>&copy; 2025 Osteria Senti. All Rights Reserved.</small></p>
 	</footer>
 
-</body>
+<!-- jQuery library -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="js/jquery.bxslider.js"></script>
 <script>
-    $(document).ready(function() {
-        // ハンバーガーメニューのトグル
-        $('.hamburger').click(function() {
-            $(this).toggleClass('active');
-            $('nav').toggleClass('active');
-        });
-    });
+	$(document).ready(function(){
+		$('.bxslider').bxSlider({
+			auto:true,
+			mode: 'fade',
+			moveSlides: true,
+			infiniteLoop: true,
+			minSlides: 3,
+			maxSlides: 3,
+			speed: 1000,
+			controls:true,
+			pager:true,
+		});
+		
+		// ハンバーガーメニューの動作
+		$('.hamburger').click(function() {
+			$(this).toggleClass('active');  // ハンバーガーアニメーション
+			$('nav').toggleClass('active'); // ナビ表示切替
+		});
+	});
 </script>
+</body>
 </html>
